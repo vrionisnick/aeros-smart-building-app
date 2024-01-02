@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DropdownMenu from './DropdownMenu';// Import the Menu component
 
 function Preferences() {
   // Dummy data for desks - replace with actual data
@@ -36,8 +37,13 @@ function Preferences() {
     setter(event.target.value);
   };
 
+  const filterDesks = (selectedDesk1, selectedDesk2) => {
+    return desks.filter(desk => desk !== selectedDesk1 && desk !== selectedDesk2);
+  };
+
   return (
     <div style={preferencesStyle}>
+    <DropdownMenu /> {/* Include the Menu component */}
       <h2>Select your 3 Favourite Desks</h2>
       <select
         value={firstDesk}
@@ -45,7 +51,7 @@ function Preferences() {
         style={dropdownStyle}
       >
         <option value="">Select the 1st Desk</option>
-        {desks.map((desk) => (
+        {filterDesks(secondDesk, thirdDesk).map((desk) => (
           <option key={desk} value={desk}>{desk}</option>
         ))}
       </select>
@@ -55,7 +61,7 @@ function Preferences() {
         style={dropdownStyle}
       >
         <option value="">Select the 2nd Desk</option>
-        {desks.map((desk) => (
+        {filterDesks(firstDesk, thirdDesk).map((desk) => (
           <option key={desk} value={desk}>{desk}</option>
         ))}
       </select>
@@ -65,7 +71,7 @@ function Preferences() {
         style={dropdownStyle}
       >
         <option value="">Select the 3rd Desk</option>
-        {desks.map((desk) => (
+        {filterDesks(firstDesk, secondDesk).map((desk) => (
           <option key={desk} value={desk}>{desk}</option>
         ))}
       </select>

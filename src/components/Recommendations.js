@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import DropdownMenu from './DropdownMenu';// Import the Menu component
 
 function Recommendations() {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ function Recommendations() {
 
   return (
     <div style={recommendationsStyle}>
+      <DropdownMenu /> {/* Include the Menu component */}
       <h2>Select 1 of the Recommended Desks for Reservation</h2>
       {desks.map((desk) => (
         <button
