@@ -1,1 +1,1 @@
-# aeros Smart building web app
+# aerOS Smart building web app
