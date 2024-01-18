@@ -15,7 +15,7 @@ function LandingPage() {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    color: 'white',
+    color: '#3333FF',
   };
 
   const buttonStyle = {

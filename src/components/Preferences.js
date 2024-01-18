@@ -20,7 +20,7 @@ function Preferences() {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    color: 'white',
+    color: '#3333FF',
   };
 
   const dropdownStyle = {
@@ -31,6 +31,21 @@ function Preferences() {
     border: '1px solid #ccc',
     borderRadius: '4px',
     width: '200px',
+  };
+
+  const buttonStyle = {
+    padding: '10px 20px',
+    border: 'none',
+    backgroundColor: 'blue',
+    color: 'white',
+    fontSize: '16px',
+    cursor: 'pointer',
+    width: '100%',
+  };
+
+  const handleSubmit = () => {
+    console.log("Selected Desks:", firstDesk, secondDesk, thirdDesk);
+    // Perform any other action on submit here
   };
 
   const handleDeskChange = (setter) => (event) => {
@@ -44,7 +59,7 @@ function Preferences() {
   return (
     <div style={preferencesStyle}>
     <DropdownMenu /> {/* Include the Menu component */}
-      <h2>Select your 3 Favourite Desks</h2>
+      <h2>Select your 3 Favorite Desks</h2>
       <select
         value={firstDesk}
         onChange={handleDeskChange(setFirstDesk)}
@@ -75,6 +90,10 @@ function Preferences() {
           <option key={desk} value={desk}>{desk}</option>
         ))}
       </select>
+      <div>
+        <button onClick={handleSubmit} style={{ ...buttonStyle }}>Submit</button>
+      </div>
+      
     </div>
   );
 }

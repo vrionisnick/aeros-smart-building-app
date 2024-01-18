@@ -6,14 +6,6 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle login logic here
-    console.log("Logging in with", email, password);
-    // On successful login, redirect to the LandingPage
-    navigate('/landing');
-  }
-
   const loginStyle = {
     backgroundImage: 'url("/images/background.png")', // Add your background image path
     backgroundRepeat: 'no-repeat',
@@ -24,7 +16,7 @@ function Login() {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    color: 'white',
+    color: '#3333FF',
   };
 
   const formStyle = {
@@ -53,9 +45,18 @@ function Login() {
     width: '100%',
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle login logic here
+    console.log("Logging in with", email, password);
+    // On successful login, redirect to the LandingPage
+    navigate('/landing');
+  }
+  
   return (
     <div style={loginStyle}>
-      <h2>aerOS Smart Building App</h2>
+      <h2>aerOS </h2>
+      <h2>Smart Building App</h2>
       <h4>Login to your Account</h4>
       <form onSubmit={handleSubmit} style={formStyle}>
         <div>

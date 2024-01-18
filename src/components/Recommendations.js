@@ -1,9 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import DropdownMenu from './DropdownMenu';// Import the Menu component
 
 function Recommendations() {
-  const navigate = useNavigate();
 
   const recommendationsStyle = {
     backgroundImage: 'url("/images/background.png")', // Add your background image path
@@ -15,7 +13,7 @@ function Recommendations() {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    color: 'white',
+    color: '#3333FF',
   };
 
   const buttonStyle = {
