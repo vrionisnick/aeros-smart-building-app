@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./InnerContainer.css";
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -17,13 +18,6 @@ function Login() {
     alignItems: 'center',
     textAlign: 'center',
     color: '#3333FF',
-  };
-
-  const formStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    padding: '40px',
-    borderRadius: '5px',
-    width: '300px',
   };
 
   const inputStyle = {
@@ -55,32 +49,34 @@ function Login() {
   
   return (
     <div style={loginStyle}>
-      <h2>aerOS </h2>
-      <h2>Smart Building App</h2>
-      <h4>Login to your Account</h4>
-      <form onSubmit={handleSubmit} style={formStyle}>
-        <div>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email address"
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            style={inputStyle}
-          />
-        </div>
-        <div>
-          <button type="submit" style={buttonStyle}>SIGN IN</button>
-        </div>
-      </form>
+      <div className="inner-container">
+        <h2>aerOS </h2>
+        <h2>Smart Building App</h2>
+        <h4>Login to your Account</h4>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input 
+              type="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email address"
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <input 
+              type="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              style={inputStyle}
+            />
+          </div>
+          <div>
+            <button type="submit" style={buttonStyle}>SIGN IN</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

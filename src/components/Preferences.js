@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';// Import the Menu component
+import "./InnerContainer.css";
 
 function Preferences() {
   // Dummy data for desks - replace with actual data
@@ -59,41 +60,43 @@ function Preferences() {
   return (
     <div style={preferencesStyle}>
     <DropdownMenu /> {/* Include the Menu component */}
+      <div className="inner-container">
       <h2>Select your 3 Favorite Desks</h2>
-      <select
-        value={firstDesk}
-        onChange={handleDeskChange(setFirstDesk)}
-        style={dropdownStyle}
-      >
-        <option value="">Select the 1st Desk</option>
-        {filterDesks(secondDesk, thirdDesk).map((desk) => (
-          <option key={desk} value={desk}>{desk}</option>
-        ))}
-      </select>
-      <select
-        value={secondDesk}
-        onChange={handleDeskChange(setSecondDesk)}
-        style={dropdownStyle}
-      >
-        <option value="">Select the 2nd Desk</option>
-        {filterDesks(firstDesk, thirdDesk).map((desk) => (
-          <option key={desk} value={desk}>{desk}</option>
-        ))}
-      </select>
-      <select
-        value={thirdDesk}
-        onChange={handleDeskChange(setThirdDesk)}
-        style={dropdownStyle}
-      >
-        <option value="">Select the 3rd Desk</option>
-        {filterDesks(firstDesk, secondDesk).map((desk) => (
-          <option key={desk} value={desk}>{desk}</option>
-        ))}
-      </select>
-      <div>
-        <button onClick={handleSubmit} style={{ ...buttonStyle }}>Submit</button>
+        <select
+          value={firstDesk}
+          onChange={handleDeskChange(setFirstDesk)}
+          style={dropdownStyle}
+        >
+          <option value="">Select the 1st Desk</option>
+          {filterDesks(secondDesk, thirdDesk).map((desk) => (
+            <option key={desk} value={desk}>{desk}</option>
+          ))}
+        </select>
+        <select
+          value={secondDesk}
+          onChange={handleDeskChange(setSecondDesk)}
+          style={dropdownStyle}
+        >
+          <option value="">Select the 2nd Desk</option>
+          {filterDesks(firstDesk, thirdDesk).map((desk) => (
+            <option key={desk} value={desk}>{desk}</option>
+          ))}
+        </select>
+        <select
+          value={thirdDesk}
+          onChange={handleDeskChange(setThirdDesk)}
+          style={dropdownStyle}
+        >
+          <option value="">Select the 3rd Desk</option>
+          {filterDesks(firstDesk, secondDesk).map((desk) => (
+            <option key={desk} value={desk}>{desk}</option>
+          ))}
+        </select>
+        <div>
+          <button onClick={handleSubmit} style={{ ...buttonStyle }}>Submit</button>
+        </div>
       </div>
-      
+              
     </div>
   );
 }

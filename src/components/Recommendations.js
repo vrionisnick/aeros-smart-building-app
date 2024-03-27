@@ -1,5 +1,6 @@
 import React from 'react';
 import DropdownMenu from './DropdownMenu';// Import the Menu component
+import "./InnerContainer.css";
 
 function Recommendations() {
 
@@ -36,17 +37,19 @@ function Recommendations() {
 
   return (
     <div style={recommendationsStyle}>
-      <DropdownMenu /> {/* Include the Menu component */}
-      <h2>Select 1 of the Recommended Desks for Reservation</h2>
-      {desks.map((desk) => (
-        <button
-          key={desk}
-          style={buttonStyle}
-          onClick={() => handleDeskSelection(desk)}
-        >
-          {desk}
-        </button>
-      ))}
+        <DropdownMenu /> {/* Include the Menu component */}
+        <div className="inner-container">
+          <h2>Select 1 of the Recommended Desks for Reservation</h2>
+        {desks.map((desk) => (
+          <button
+            key={desk}
+            style={buttonStyle}
+            onClick={() => handleDeskSelection(desk)}
+          >
+            {desk}
+          </button>
+        ))}
+        </div>
     </div>
   );
 }
